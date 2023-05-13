@@ -1,0 +1,9 @@
+  tsc --init
+buat inisialisasi project ts. jadi nanti pas mau compile cukup pake
+
+  tsc 
+gak perlu nyebutin nama file nya. nanti semua file ts bakal otomatis dicompile
+
+lalu supaya otomatis ngecompile pas ngesave kita pake:
+  tsc --watch 
+

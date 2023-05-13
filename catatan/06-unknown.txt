@@ -1,0 +1,20 @@
+let userInput: unknown;
+let userName: string;
+
+userInput = 10;
+userInput = 'Adi';
+
+// if (typeof userInput === 'string') {
+//   userName = userInput;
+//   console.log(userName);
+// }
+
+userName = userInput;
+console.log(userName);
+
+unknown itu mirip any. cuma variable dengan type unknown tidak bisa langsung
+diasign dengan tidak tipe data lain secara langsung. untuk mengasign variable lain
+dengan variable tipe data unknown maka diperlukan pengekan tipe data.
+
+dapat dilihat bahawa type userInput yang mana bertype unknown dicek dulu tipe
+datanya sebelum nanti variable nya di asign oleh variable lain.
