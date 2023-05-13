@@ -1,5 +1,6 @@
-var userInput;
-var userName;
+"use strict";
+let userInput;
+let userName;
 userInput = 10;
 userInput = 'Adi';
 if (typeof userInput === 'string') {
@@ -17,7 +18,7 @@ function generatorError(message, code) {
 // jadi si test() teu jalan
 function test() {
     try {
-        console.log('run test()');
+        console.log('run test() test compiler');
         generatorError('An error occured', 500);
     }
     catch (error) {
