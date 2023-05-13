@@ -18,7 +18,7 @@ function generatorError(message, code) {
 // jadi si test() teu jalan
 function test() {
     try {
-        console.log('run test() test compiler');
+        console.log('run test()');
         generatorError('An error occured', 500);
     }
     catch (error) {
