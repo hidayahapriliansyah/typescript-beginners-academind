@@ -1,15 +1,29 @@
-var combine = function (input1, input2, resultConversion) {
-    var result;
-    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
-        result = +input1 + +input2;
-        // kalau inputnya string terus dipaksa jadi number maka hasilnya bakal jadi NaN
+var userInput;
+var userName;
+userInput = 10;
+userInput = 'Adi';
+if (typeof userInput === 'string') {
+    userName = userInput;
+    console.log(userName);
+}
+//  never type
+function generatorError(message, code) {
+    throw { message: message, code: code };
+}
+;
+// console.log('generatorError(An error occured, 500)');
+// console.log(generatorError('An error occured', 500));
+// ieu ngereunkeun kode dihanapna da throw error nu teu ditangkap
+// jadi si test() teu jalan
+function test() {
+    try {
+        console.log('run test()');
+        generatorError('An error occured', 500);
     }
-    else {
-        result = input1.toString() + input2.toString();
+    catch (error) {
+        console.log('error');
+        console.log(error);
     }
-    return result;
-};
-var combineAge = combine(20, 10, 'as-string');
-console.log(combineAge);
-var combineName = combine('Hello', 'Adi', 'as-number');
-console.log(combineName);
+}
+;
+test();
