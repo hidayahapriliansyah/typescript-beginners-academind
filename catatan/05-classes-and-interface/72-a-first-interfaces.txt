@@ -1,3 +1,8 @@
+tadinya ngomong sama gpt, soalnya penggunaannya mirip sama type 
+
+bedanya adalah interface itu bisa diextend.
+Intinya interface itu desain object.
+
 interface Person {
   name: string;
   age: number;
