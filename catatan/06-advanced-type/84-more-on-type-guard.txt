@@ -1,4 +1,29 @@
-// type Admin = {
+ini keren sih.
+
+ini berusaha mecahin masalah kalau make type data union type.
+yang mana data yang dicek harus bisa tetap berjalan flexible
+sesuai dengan macam macam tipe data union.
+
+nah, melindungi berdasarkan tipe data ini yang triki karena
+kita tidak bisa seenaknya menggunakan typeof pada type data buatan typescript.
+untuk melindungi type data maka harus menggunakan penulisan kode
+yang secara langsung dimengerti oleh javascript.
+
+dari course ini dikasih tiga contoh yaitu menggunakan :
+- typeof
+- in
+- instanceof
+
+typeof untuk mengecek type data secara langsung
+in untuk mengecek apakah terdapat suatu properti tertentu dalam sebuah objek
+instanceof untuk mengecek di objek yang dibuat diinstansiasi dari class apa
+
+jadi type guard itu bukan tentang syntax tertentu penulisan typescript ya,
+tapi tentang teknik bagaimana cara mengecek suatu type data agar kode 
+yang dibuat tetap berjalan meskipun menggunakan tipe data yang flexible
+
+contoh :
+  // type Admin = {
 //   name: string;
 //   privilege: string[];
 // }
