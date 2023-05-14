@@ -1,35 +1,63 @@
 "use strict";
 class Departement {
-    // ini mirip php, mirip banget. buat bikin setter sama getter.
-    constructor(name) {
+    constructor(id, name) {
+        this.id = id;
         this.employees = [];
-        // private name diatas adalah shorthand
-        // ketika memasukkan name ke constructor maka akan langsung menjadi 
-        // this.name tanpa harus deklarasiiin dulu di propertinya nya di atas
-        // nah jadi gak perlu nulis ini
         this.name = name;
     }
     describe() {
         console.log('Departement : ' + this.name);
     }
-    // fungsi this: Departement
-    // nanti kalau ada object yang pake describe dari instance ini
-    //  maka si struktur objeknya harus mirip dengan class ini.
     call() {
         console.log('call' + this.name);
     }
     addEmployes(employee) {
         this.employees.push(employee);
-        // kalau this.employess ini mah gak bisa pake shorthand lah
-        // karena ini employees nya bukan ngambil dari argumen method
     }
     printEmployeesInformation() {
         console.log(this.employees.length);
         console.log(this.employees);
     }
 }
-const accounting = new Departement('Accounting');
+class ITDepartment extends Departement {
+    constructor(id, admins) {
+        super(id, 'IT');
+    }
+}
+class AccountingDepartmend extends Departement {
+    constructor(id, reports) {
+        super(id, 'Accounting');
+        this.reports = reports;
+    }
+    addEmployes(employee) {
+        if (employee === 'Tolak')
+            return;
+        this.employees.push(employee);
+    }
+    addReport(text) {
+        this.reports.push('text');
+    }
+    getReports() {
+        return this.reports;
+    }
+}
+const it = new ITDepartment('d1', ['Sela', 'Dia']);
+it.describe();
+it.addEmployes('Adi');
+it.addEmployes('Hidayah');
+it.printEmployeesInformation();
+console.log('it');
+console.log(it);
+const accounting = new AccountingDepartmend('d2', []);
 accounting.describe();
-accounting.addEmployes('Adi');
-accounting.addEmployes('Hidayah');
+console.log('accounting');
+console.log(accounting);
+accounting.addEmployes('Tolak');
+accounting.addEmployes('Firmansyah');
+accounting.addEmployes('April');
 accounting.printEmployeesInformation();
+accounting.addReport('Report 1');
+console.log('accounting with report');
+console.log(accounting);
+console.log('accounting reports');
+console.log(accounting.getReports());
