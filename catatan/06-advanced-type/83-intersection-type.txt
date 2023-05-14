@@ -1,3 +1,9 @@
+kayak namanya intersection itu bakal ngejadiin
+satu kaalu ada irisan yang punya satu type data dengan
+nama dan type data yang sama.
+
+ini bisa dipake sama type atau interface
+
 // type Admin = {
 //   name: string;
 //   privilege: string[];
