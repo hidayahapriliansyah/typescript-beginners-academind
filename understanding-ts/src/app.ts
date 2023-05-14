@@ -1,6 +1,12 @@
-interface Greetable {
+interface Named {
   readonly name: string;
+}
 
+interface FormalGreet {
+  greetingPhrase: string;
+}
+
+interface Greetable extends Named {
   greet(phrase: string): void;
 }
 
