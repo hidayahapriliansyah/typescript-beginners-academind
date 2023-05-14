@@ -1,6 +1,5 @@
-interface Person {
+interface Greetable {
   name: string;
-  age: number;
 
   greet(phrase: string): void;
 }
@@ -13,6 +12,19 @@ interface Person {
 //     greet(phrase: string): void;
 // }
 
+class Person implements Greetable {
+  name: string;
+  age = 30;
+
+  constructor(n: string) {
+    this.name = n;
+  }
+
+  greet(phrase: string): void {
+    console.log(phrase + ' ' + this.name);
+  }
+}
+
 let user1: Person;
 
 user1 = {
@@ -23,4 +35,5 @@ user1 = {
   },
 };
 
+// user1 = new Person('Adi Muhamad F');
 user1.greet('Hi! I am');

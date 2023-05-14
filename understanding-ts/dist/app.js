@@ -5,6 +5,15 @@
 //     age: number;
 //     greet(phrase: string): void;
 // }
+class Person {
+    constructor(n) {
+        this.age = 30;
+        this.name = n;
+    }
+    greet(phrase) {
+        console.log(phrase + ' ' + this.name);
+    }
+}
 let user1;
 user1 = {
     name: 'Hidayah',
@@ -13,4 +22,5 @@ user1 = {
         console.log(phrase + ' ' + this.name);
     },
 };
+// user1 = new Person('Adi Muhamad F');
 user1.greet('Hi! I am');
