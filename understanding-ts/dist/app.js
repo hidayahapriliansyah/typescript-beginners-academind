@@ -7,6 +7,10 @@ class Departement {
     }
     describe() {
         console.log('Departement : ' + this.name);
+        console.log(Departement.year);
+        // console.log(this.year);
+        // gak bisa ke this karena this itu menunjuk ke instance
+        // sedangkan static itu gak diinstansiasi bisa diakses
     }
     call() {
         console.log('call' + this.name);
@@ -19,6 +23,7 @@ class Departement {
         console.log(this.employees);
     }
 }
+Departement.year = 2023;
 class ITDepartment extends Departement {
     constructor(id, admins) {
         super(id, 'IT');
