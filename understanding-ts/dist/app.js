@@ -1,9 +1,15 @@
 "use strict";
 class Departement {
     // ini mirip php, mirip banget. buat bikin setter sama getter.
-    constructor(n) {
+    constructor(name) {
+        this.name = name;
+        // public name: string;
         this.employees = [];
-        this.name = n;
+        // private name diatas adalah shorthand
+        // ketika memasukkan name ke constructor maka akan langsung menjadi 
+        // this.name tanpa harus deklarasiiin dulu di propertinya nya di atas
+        // nah jadi gak perlu nulis ini
+        // this.name = name;
     }
     describe() {
         console.log('Departement : ' + this.name);
@@ -16,6 +22,8 @@ class Departement {
     }
     addEmployes(employee) {
         this.employees.push(employee);
+        // kalau this.employess ini mah gak bisa pake shorthand lah
+        // karena ini employees nya bukan ngambil dari argumen method
     }
     printEmployeesInformation() {
         console.log(this.employees.length);
