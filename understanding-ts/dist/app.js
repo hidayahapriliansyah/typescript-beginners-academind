@@ -2,14 +2,12 @@
 class Departement {
     // ini mirip php, mirip banget. buat bikin setter sama getter.
     constructor(name) {
-        this.name = name;
-        // public name: string;
         this.employees = [];
         // private name diatas adalah shorthand
         // ketika memasukkan name ke constructor maka akan langsung menjadi 
         // this.name tanpa harus deklarasiiin dulu di propertinya nya di atas
         // nah jadi gak perlu nulis ini
-        // this.name = name;
+        this.name = name;
     }
     describe() {
         console.log('Departement : ' + this.name);

@@ -1,14 +1,14 @@
 class Departement {
-  // public name: string;
+  public readonly name: string;
   private employees: string[] = [];
   // ini mirip php, mirip banget. buat bikin setter sama getter.
 
-  constructor(private name: string) {
+  constructor(name: string) {
     // private name diatas adalah shorthand
     // ketika memasukkan name ke constructor maka akan langsung menjadi 
     // this.name tanpa harus deklarasiiin dulu di propertinya nya di atas
     // nah jadi gak perlu nulis ini
-    // this.name = name;
+    this.name = name;
   }
 
   describe(this: Departement) {
