@@ -1,6 +1,8 @@
 "use strict";
 class Departement {
+    // ini mirip php, mirip banget. buat bikin setter sama getter.
     constructor(n) {
+        this.employees = [];
         this.name = n;
     }
     describe() {
@@ -12,12 +14,16 @@ class Departement {
     call() {
         console.log('call' + this.name);
     }
+    addEmployes(employee) {
+        this.employees.push(employee);
+    }
+    printEmployeesInformation() {
+        console.log(this.employees.length);
+        console.log(this.employees);
+    }
 }
 const accounting = new Departement('Accounting');
 accounting.describe();
-const accountingCopy = { name: 'Hello', describe: accounting.describe, call: accounting.call };
-accountingCopy.describe();
-accountingCopy.call();
-const accountingCopyNoDiscribe = { call: accounting.call };
-console.log('accountingCopyNoDiscribe.call()');
-accountingCopyNoDiscribe.call();
+accounting.addEmployes('Adi');
+accounting.addEmployes('Hidayah');
+accounting.printEmployeesInformation();
