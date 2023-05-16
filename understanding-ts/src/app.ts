@@ -1,12 +1,15 @@
-// const userInput = document.getElementById('user-input')! as HTMLInputElement;
-const userInput = <HTMLInputElement>document.getElementById('user-input')!;
+type Combinable = number | string;
 
-userInput.value = 'Hello Adi';
-
-interface ErrorContainer {
-  [props: string]: string;
-}
-
-const ErrorBag: ErrorContainer = {
-  email: 'Hello',
+function add(a: number, b: number): number;
+function add(a: string, b: number): string;
+function add(a: number, b: string): string;
+function add(a: string, b: string): string;
+function add(a: Combinable, b: Combinable): Combinable {
+  if (typeof a === 'string' || typeof b === 'string') {
+    return a.toLocaleString() + b.toLocaleString();
+  }
+  return a + b;
 };
+
+const result = add(2, 'Hello');
+result.split(' ');

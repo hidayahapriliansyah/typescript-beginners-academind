@@ -1,7 +1,10 @@
 "use strict";
-// const userInput = document.getElementById('user-input')! as HTMLInputElement;
-const userInput = document.getElementById('user-input');
-userInput.value = 'Hello Adi';
-const ErrorBag = {
-    email: 'Hello',
-};
+function add(a, b) {
+    if (typeof a === 'string' || typeof b === 'string') {
+        return a.toLocaleString() + b.toLocaleString();
+    }
+    return a + b;
+}
+;
+const result = add(2, 'Hello');
+result.split(' ');
