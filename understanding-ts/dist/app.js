@@ -18,3 +18,7 @@ const fetchData = {
     }
 };
 console.log((_a = fetchData === null || fetchData === void 0 ? void 0 : fetchData.job) === null || _a === void 0 ? void 0 : _a.title);
+const userInput = '';
+//  '' dianggap false kalau pakai ||
+const nameInput = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT';
+console.log('name', nameInput);

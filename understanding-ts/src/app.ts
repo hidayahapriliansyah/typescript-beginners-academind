@@ -24,3 +24,10 @@ const fetchData = {
 };
 
 console.log(fetchData?.job?.title);
+
+const userInput = '';
+//  '' dianggap false kalau pakai ||
+
+const nameInput = userInput ?? 'DEFAULT';
+
+console.log('name', nameInput);
