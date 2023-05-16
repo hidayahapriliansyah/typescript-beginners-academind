@@ -18,3 +18,8 @@ function countAndDescribe(element) {
 }
 ;
 console.log(countAndDescribe('Adi'));
+function extractAndConver(obj, key) {
+    return obj[key];
+}
+;
+console.log(extractAndConver({ name: 'Hidayah extract' }, 'name'));

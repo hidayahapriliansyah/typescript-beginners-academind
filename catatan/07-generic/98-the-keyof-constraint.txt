@@ -1,0 +1,16 @@
+gak bisa kayak gini coy 
+
+    function extractAndConver<T extends object, U extends string>(obj: T, key: U): T[U] {
+      return obj[key];
+    };
+
+    console.log(extractAndConver({ name: 'Hidayah extract' }, 'name'));
+
+code yang diatas kalau di jsnya mah jalan sih.
+
+makanya dibikin kayak gini yang ada keyof nya :
+    function extractAndConver<T extends object, U extends keyof T>(obj: T, key: U) {
+      return obj[key];
+    };
+
+    console.log(extractAndConver({ name: 'Hidayah extract' }, 'name'));
