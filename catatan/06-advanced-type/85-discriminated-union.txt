@@ -1,3 +1,9 @@
+intinya alih alih membuat type atau interface hanya dengan pasangan key dan type data,
+kita membuat key type atau interface yang bernail nilai string yang mewakili type data
+yang akan dibuat sehingga objek yang dibuat menggunakan type data tersebut dipaksa
+untuk memiliki key.value persis dengan type data, sehingga objek tersebut dapat kita
+cek jenis apa objek nya menggunakan property type tersebut.
+
 interface Bird {
   type: 'bird';
   flyingSpeed: number;
