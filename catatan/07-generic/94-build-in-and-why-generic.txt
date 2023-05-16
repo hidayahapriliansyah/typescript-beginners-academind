@@ -1,0 +1,21 @@
+intina kumaha nya ...
+pasang type data lagi sih, tapi versi nulisna Promise<>
+
+contoh 
+
+const names: Array<string> = [];
+
+const promise: Promise<string> = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('It is done!');
+  }, 2000);
+});
+
+promise.then((response) => {
+  response.toLocaleLowerCase();
+});
+
+intinya biar kita dapat suport juga kalau tahu tipe data 
+apa yang bakal dibalikin sebuah function, atau method,
+nanti ngodingnya bisa lebih persisten dan cepet karena muncul
+autocomplete heheheheheheh
