@@ -13,3 +13,14 @@ function add(a: Combinable, b: Combinable): Combinable {
 
 const result = add(2, 'Hello');
 result.split(' ');
+
+const fetchData = {
+  id: 'u1',
+  name: 'Hidayaha',
+  job: {
+    title: 'Front End Programmer',
+    description: 'My own componay',
+  }
+};
+
+console.log(fetchData?.job?.title);
