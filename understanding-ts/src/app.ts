@@ -10,9 +10,13 @@
 //   response.toLocaleLowerCase();
 // });
 
-function mergeObj<T extends object, U extends object>(objA: T, objB: U) {
+interface Hello {
+  hello: 'hello';
+}
+
+function mergeObj<T extends Hello, U extends object>(objA: T, objB: U) {
   return Object.assign(objA, objB);
 };
 
-const merge = mergeObj({ name: 'hidayah' }, { age: 22 });
-console.log(merge.name);
+const merge = mergeObj({ hello: 'hello' }, { age: 22 });
+console.log(merge.hello);
