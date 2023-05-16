@@ -1,42 +1,4 @@
-interface Bird {
-  type: 'bird';
-  flyingSpeed: number;
-}
+// const userInput = document.getElementById('user-input')! as HTMLInputElement;
+const userInput = <HTMLInputElement>document.getElementById('user-input')!;
 
-interface Horse {
-  type: 'horse';
-  runningSpeed: number;
-}
-
-type Animal = Bird | Horse;
-
-function movingAnimal(animal: Animal) {
-  // kenapa ada Discrimenated Union?
-  // karena gak bisa kayak gini
-  // if ('flyingSpeed' in animal) {
-  //   console.log('Moving with speed ' + animal.flyingSpeed);
-  // }
-
-  // if ('flyingSpeed' instanceof Bird) {
-  //   console.log('Moving with speed ' + animal.flyingSpeed);
-  // }
-
-  // bukan karena bakal muncul banyak if if if nya ...
-  //  tapi karena kalau kita cek pake in
-  //  karena in itu buat objek, bukan interface,
-  // sama kayak instance itu buat ngecek apakah objek instance dari class,
-  // sedangkan kita bekerja dengan interface sekarang ...
-
-  let speed: number;
-  switch (animal.type) {
-    case 'bird':
-      speed = animal.flyingSpeed;
-      break;
-    case 'horse':
-      speed = animal.runningSpeed;
-      break;
-  }
-  console.log('Moving at speed : ' + speed);
-}
-
-movingAnimal({ type: 'bird', flyingSpeed: 50});
+userInput.value = 'Hello Adi';
