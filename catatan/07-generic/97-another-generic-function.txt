@@ -1,0 +1,19 @@
+ini faham sih cuman ... belum nemu case nya yang tepat.
+padahal kalau cuman sekedar dari contoh mah paham sih.
+
+
+interface Lengthy {
+  length: number;
+}
+
+function countAndDescribe<T extends Lengthy>(element: T) : [T, string]  {
+  let description = 'Got no element';
+  if (element.length === 1) {
+    description = 'Got 1 element';
+  } else if (element.length > 1) {
+    description = 'Got ' + element.length + ' element';
+  }
+  return [element, description];
+};
+
+console.log(countAndDescribe('Adi'));
