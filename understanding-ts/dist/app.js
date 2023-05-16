@@ -1,24 +1,16 @@
 "use strict";
-var _a;
-function add(a, b) {
-    if (typeof a === 'string' || typeof b === 'string') {
-        return a.toLocaleString() + b.toLocaleString();
-    }
-    return a + b;
+// const names: Array<string> = [];
+// const promise: Promise<string> = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve('It is done!');
+//   }, 2000);
+// });
+// promise.then((response) => {
+//   response.toLocaleLowerCase();
+// });
+function mergeObj(objA, objB) {
+    return Object.assign(objA, objB);
 }
 ;
-const result = add(2, 'Hello');
-result.split(' ');
-const fetchData = {
-    id: 'u1',
-    name: 'Hidayaha',
-    job: {
-        title: 'Front End Programmer',
-        description: 'My own componay',
-    }
-};
-console.log((_a = fetchData === null || fetchData === void 0 ? void 0 : fetchData.job) === null || _a === void 0 ? void 0 : _a.title);
-const userInput = '';
-//  '' dianggap false kalau pakai ||
-const nameInput = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT';
-console.log('name', nameInput);
+const merge = mergeObj({ name: 'hidayah' }, { age: 22 });
+console.log(merge.name);
