@@ -42,3 +42,36 @@ function extractAndConver<T extends object, U extends keyof T>(obj: T, key: U) {
 };
 
 console.log(extractAndConver({ name: 'Hidayah extract' }, 'name'));
+
+console.warn('Generic Class');
+
+class DataStorage<T extends string | boolean | number > {
+  private data: T[] = [];
+
+  addItem(item: T) {
+    this.data.push(item);
+  }
+
+  removeItem(item: T) {
+    if (this.data.indexOf(item) === -1) {
+      return;
+    }
+    this.data.splice(this.data.indexOf(item), 1);
+  };
+
+  getItems() {
+    return [...this.data];
+  };
+}
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem('Hidayah');
+textStorage.addItem('Apriliansyah');
+textStorage.removeItem('Hidayah');
+console.log(textStorage.getItems());
+
+const objStorage = new DataStorage<object>();
+objStorage.addItem({ name: 'Hidayah' });
+objStorage.addItem({ name: 'Apriliansyah' });
+objStorage.removeItem({ name: 'Hidayah' });
+console.log(objStorage);

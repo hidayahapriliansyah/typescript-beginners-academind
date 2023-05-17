@@ -23,3 +23,33 @@ function extractAndConver(obj, key) {
 }
 ;
 console.log(extractAndConver({ name: 'Hidayah extract' }, 'name'));
+console.warn('Generic Class');
+class DataStorage {
+    constructor() {
+        this.data = [];
+    }
+    addItem(item) {
+        this.data.push(item);
+    }
+    removeItem(item) {
+        if (this.data.indexOf(item) === -1) {
+            return;
+        }
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+    ;
+    getItems() {
+        return [...this.data];
+    }
+    ;
+}
+const textStorage = new DataStorage();
+textStorage.addItem('Hidayah');
+textStorage.addItem('Apriliansyah');
+textStorage.removeItem('Hidayah');
+console.log(textStorage.getItems());
+const objStorage = new DataStorage();
+objStorage.addItem({ name: 'Hidayah' });
+objStorage.addItem({ name: 'Apriliansyah' });
+objStorage.removeItem({ name: 'Hidayah' });
+console.log(objStorage);
