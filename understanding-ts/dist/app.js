@@ -6,14 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 function Logger(logString) {
+    console.log('LOGGING DECORATOR');
     return function (constructor) {
+        console.log('LOGGING TRUE DECORATOR');
         console.log(logString);
         console.log(constructor);
     };
 }
 ;
 function WithTemplate(template, hookId) {
+    console.log('TEMPLATE DECORATOR');
     return function (constructor) {
+        console.log('TEMPLATE TRUE DECORATOR');
         const hookEl = document.getElementById('app');
         console.log('typeof constructor');
         console.log(typeof constructor);
@@ -36,7 +40,6 @@ function WithTemplate(template, hookId) {
 //   console.log(p.name);
 //   console.log('testConstructor terpanggil');
 // }
-// @Logger('LOGGING PERSON')
 let Person = 
 // @testConstructor
 class Person {
@@ -46,6 +49,7 @@ class Person {
     }
 };
 Person = __decorate([
+    Logger('LOGGING PERSON'),
     WithTemplate('<h1>My person Object</h1>', 'app')
     // @testConstructor
 ], Person);
