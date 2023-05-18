@@ -1,0 +1,56 @@
+Class itu bisa pakai interface sebagai desain class nya.
+ini mirip kayak abstract. cuma kalau di abstract kita
+masih bisa ngasih detail isi method atau properti nya.
+kalau di interface mah pure desain dong nyebutin tipe data,
+sama bentuk function/method.
+
+btw ternyata kita bisa nge assign variable yang udah dikasih type class 
+dengan cara object assignment.
+
+cara pakainya pake implements. kan kalau abstract mah extends.
+
+bisa disimpulin kalau interface itu kumpulan properti sama method abstract.
+sedangkan kalau class abstract sendiri di dalamnya masih bisa terdapat
+properti atau method yang sudah jelas isinya seperti apa.
+
+contoh :
+
+interface Greetable {
+  name: string;
+
+  greet(phrase: string): void;
+}
+
+// sama kayak ini coy
+// type Person = {
+//     name: string;
+//     age: number;
+
+//     greet(phrase: string): void;
+// }
+
+class Person implements Greetable {
+  name: string;
+  age = 30;
+
+  constructor(n: string) {
+    this.name = n;
+  }
+
+  greet(phrase: string): void {
+    console.log(phrase + ' ' + this.name);
+  }
+}
+
+let user1: Person;
+
+user1 = {
+  name: 'Hidayah',
+  age: 22,
+  greet(phrase) {
+    console.log(phrase + ' ' + this.name);
+  },
+};
+
+// user1 = new Person('Adi Muhamad F');
+user1.greet('Hi! I am');
