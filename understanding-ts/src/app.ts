@@ -64,14 +64,35 @@ class DataStorage<T extends string | boolean | number > {
   };
 }
 
-const textStorage = new DataStorage<string>();
-textStorage.addItem('Hidayah');
-textStorage.addItem('Apriliansyah');
-textStorage.removeItem('Hidayah');
-console.log(textStorage.getItems());
+// const textStorage = new DataStorage<string>();
+// textStorage.addItem('Hidayah');
+// textStorage.addItem('Apriliansyah');
+// textStorage.removeItem('Hidayah');
+// console.log(textStorage.getItems());
 
-const objStorage = new DataStorage<object>();
-objStorage.addItem({ name: 'Hidayah' });
-objStorage.addItem({ name: 'Apriliansyah' });
-objStorage.removeItem({ name: 'Hidayah' });
-console.log(objStorage);
+interface CourseGoal {
+  title: string;
+  description: string;
+  date: Date;
+}
+
+// function createCourseGoal() {
+//   const courseGoal: CourseGoal = {
+//     title: 'Hello',
+//     description: 'des',
+//     date: new Date(),
+//   };
+
+//   return courseGoal;
+// };
+
+function createCourseGoal(): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = 'test';
+  courseGoal.description = 'desrsersd';
+  courseGoal.date = new Date();
+  return courseGoal as CourseGoal;
+}
+
+const names: Readonly<string[]> = ['Satu', 'dua'];
+names.push('sdfsdf');

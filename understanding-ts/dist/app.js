@@ -43,13 +43,20 @@ class DataStorage {
     }
     ;
 }
-const textStorage = new DataStorage();
-textStorage.addItem('Hidayah');
-textStorage.addItem('Apriliansyah');
-textStorage.removeItem('Hidayah');
-console.log(textStorage.getItems());
-const objStorage = new DataStorage();
-objStorage.addItem({ name: 'Hidayah' });
-objStorage.addItem({ name: 'Apriliansyah' });
-objStorage.removeItem({ name: 'Hidayah' });
-console.log(objStorage);
+// function createCourseGoal() {
+//   const courseGoal: CourseGoal = {
+//     title: 'Hello',
+//     description: 'des',
+//     date: new Date(),
+//   };
+//   return courseGoal;
+// };
+function createCourseGoal() {
+    let courseGoal = {};
+    courseGoal.title = 'test';
+    courseGoal.description = 'desrsersd';
+    courseGoal.date = new Date();
+    return courseGoal;
+}
+const names = ['Satu', 'dua'];
+names.push('sdfsdf');
