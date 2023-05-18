@@ -1,98 +1,36 @@
-// const names: Array<string> = [];
-
-// const promise: Promise<string> = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve('It is done!');
-//   }, 2000);
-// });
-
-// promise.then((response) => {
-//   response.toLocaleLowerCase();
-// });
-
-interface Hello {
-  hello: 'hello';
-}
-
-function mergeObj<T extends Hello, U extends object>(objA: T, objB: U) {
-  return Object.assign(objA, objB);
-};
-
-const merge = mergeObj({ hello: 'hello' }, { age: 22 });
-console.log(merge.hello);
-
-interface Lengthy {
-  length: number;
-}
-
-function countAndDescribe<T extends Lengthy>(element: T) : [T, string]  {
-  let description = 'Got no element';
-  if (element.length === 1) {
-    description = 'Got 1 element';
-  } else if (element.length > 1) {
-    description = 'Got ' + element.length + ' element';
-  }
-  return [element, description];
-};
-
-console.log(countAndDescribe('Adi'));
-
-function extractAndConver<T extends object, U extends keyof T>(obj: T, key: U) {
-  return obj[key];
-};
-
-console.log(extractAndConver({ name: 'Hidayah extract' }, 'name'));
-
-console.warn('Generic Class');
-
-class DataStorage<T extends string | boolean | number > {
-  private data: T[] = [];
-
-  addItem(item: T) {
-    this.data.push(item);
-  }
-
-  removeItem(item: T) {
-    if (this.data.indexOf(item) === -1) {
-      return;
-    }
-    this.data.splice(this.data.indexOf(item), 1);
-  };
-
-  getItems() {
-    return [...this.data];
-  };
-}
-
-// const textStorage = new DataStorage<string>();
-// textStorage.addItem('Hidayah');
-// textStorage.addItem('Apriliansyah');
-// textStorage.removeItem('Hidayah');
-// console.log(textStorage.getItems());
-
-interface CourseGoal {
-  title: string;
-  description: string;
-  date: Date;
-}
-
-// function createCourseGoal() {
-//   const courseGoal: CourseGoal = {
-//     title: 'Hello',
-//     description: 'des',
-//     date: new Date(),
-//   };
-
-//   return courseGoal;
+// function Logger(hahaha: Function) {
+//   console.log('Logging ...');
+//   console.log(hahaha);
 // };
 
-function createCourseGoal(): CourseGoal {
-  let courseGoal: Partial<CourseGoal> = {};
-  courseGoal.title = 'test';
-  courseGoal.description = 'desrsersd';
-  courseGoal.date = new Date();
-  return courseGoal as CourseGoal;
+// class Person {
+//   name = 'Hidayah';
+  
+//   constructor() {
+//     console.log('Creating person object ...');
+//   };
+  
+//   @Logger('sdfsdf')
+//   wiwLogger() {
+//     console.log('Wiw loger');
+//   }
+// }
+
+// const person = new Person();
+
+// console.log(person);
+
+// 
+function logMethod(target: any, key: string, descriptor: PropertyDescriptor) {
+  // Modifikasi perilaku metode di sini
+  console.log(`Metode ${key} telah didekorasi`);
 }
 
-const names: Readonly<string[]> = ['Satu', 'dua'];
-names.push('sdfsdf');
+class Example {
+  @logMethod
+  greet() {
+    console.log('Halo!');
+  }
+}
+
+const examplee = new Example();

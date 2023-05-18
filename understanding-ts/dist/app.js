@@ -1,62 +1,37 @@
 "use strict";
-// const names: Array<string> = [];
-function mergeObj(objA, objB) {
-    return Object.assign(objA, objB);
-}
-;
-const merge = mergeObj({ hello: 'hello' }, { age: 22 });
-console.log(merge.hello);
-function countAndDescribe(element) {
-    let description = 'Got no element';
-    if (element.length === 1) {
-        description = 'Got 1 element';
-    }
-    else if (element.length > 1) {
-        description = 'Got ' + element.length + ' element';
-    }
-    return [element, description];
-}
-;
-console.log(countAndDescribe('Adi'));
-function extractAndConver(obj, key) {
-    return obj[key];
-}
-;
-console.log(extractAndConver({ name: 'Hidayah extract' }, 'name'));
-console.warn('Generic Class');
-class DataStorage {
-    constructor() {
-        this.data = [];
-    }
-    addItem(item) {
-        this.data.push(item);
-    }
-    removeItem(item) {
-        if (this.data.indexOf(item) === -1) {
-            return;
-        }
-        this.data.splice(this.data.indexOf(item), 1);
-    }
-    ;
-    getItems() {
-        return [...this.data];
-    }
-    ;
-}
-// function createCourseGoal() {
-//   const courseGoal: CourseGoal = {
-//     title: 'Hello',
-//     description: 'des',
-//     date: new Date(),
-//   };
-//   return courseGoal;
+// function Logger(hahaha: Function) {
+//   console.log('Logging ...');
+//   console.log(hahaha);
 // };
-function createCourseGoal() {
-    let courseGoal = {};
-    courseGoal.title = 'test';
-    courseGoal.description = 'desrsersd';
-    courseGoal.date = new Date();
-    return courseGoal;
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+// class Person {
+//   name = 'Hidayah';
+//   constructor() {
+//     console.log('Creating person object ...');
+//   };
+//   @Logger('sdfsdf')
+//   wiwLogger() {
+//     console.log('Wiw loger');
+//   }
+// }
+// const person = new Person();
+// console.log(person);
+// 
+function logMethod(target, key, descriptor) {
+    // Modifikasi perilaku metode di sini
+    console.log(`Metode ${key} telah didekorasi`);
 }
-const names = ['Satu', 'dua'];
-names.push('sdfsdf');
+class Example {
+    greet() {
+        console.log('Halo!');
+    }
+}
+__decorate([
+    logMethod
+], Example.prototype, "greet", null);
+const examplee = new Example();
