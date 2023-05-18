@@ -105,13 +105,5 @@ class Product {
   }
 }
 
-// function CheckDecorate (target: Function) {
-//   console.log('jalaaan ....');
-// };
-
-// @CheckDecorate
-// class CheckClass {
-//   constructor() {
-//     console.log('Constructo checkClass');
-//   }
-// }
+const p1 = new Product('Book1', 19);
+const p2 = new Product('Book2', 29);

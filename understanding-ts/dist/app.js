@@ -58,3 +58,5 @@ __decorate([
     Log2,
     __param(0, Log4)
 ], Product.prototype, "getPriceWithTax", null);
+const p1 = new Product('Book1', 19);
+const p2 = new Product('Book2', 29);
