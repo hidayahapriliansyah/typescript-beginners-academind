@@ -8,6 +8,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+function Logger(logString) {
+    console.log('LOGGING DECORATOR');
+    return function (constructor) {
+        console.log('LOGGING TRUE DECORATOR');
+        console.log(logString);
+        console.log(constructor);
+    };
+}
+;
+function WithTemplate(template, hookId) {
+    console.log('TEMPLATE DECORATOR');
+    return function (originalConstructor) {
+        return class extends originalConstructor {
+            constructor(..._) {
+                super();
+                const hookEl = document.getElementById(hookId);
+                if (hookEl) {
+                    hookEl.innerHTML = template;
+                    hookEl.querySelector('h1').textContent = this.name;
+                }
+            }
+        };
+    };
+}
+;
+let Person = class Person {
+    constructor() {
+        this.name = 'Adi';
+        console.log('Heloo');
+    }
+};
+Person = __decorate([
+    Logger('LOGGING PERSON'),
+    WithTemplate('<h1>My person Object</h1>', 'app')
+], Person);
+const person = new Person();
 function Log(target, propertyName) {
     console.log('Property decorator!');
     console.log('target');
