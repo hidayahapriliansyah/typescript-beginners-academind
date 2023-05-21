@@ -87,7 +87,7 @@ class Product {
     this._price = val;
   }
 
-  @Log2
+  @Log3
   getPriceWithTax(@Log4 tax: number) {
     return this._price * (1 + tax);
   }

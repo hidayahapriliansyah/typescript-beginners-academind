@@ -1,3 +1,13 @@
 decorator yang bisa return selain decorator class adalah
 decorator Accessor dan decorator Method.
 
+kita akan mencoba mengubah descriptor dari decorator Method
+yang mana jadi parameter descriptor.
+di dalam descriptor terdapat 
+    configurable: true
+    enumerable: false
+    value: ƒ getPriceWithTax(tax)
+    writable: true
+    [[Prototype]]: Object
+
+kita akan coba manipulasi ini.
