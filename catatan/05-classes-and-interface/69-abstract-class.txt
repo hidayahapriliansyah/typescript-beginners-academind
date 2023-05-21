@@ -1,0 +1,11 @@
+ide dari abstrak class adalah class tersebut adalah kerangka/desain dari 
+class class yang akan dibuat.
+
+cara menulis abstract class adalah menambahkan abstract sebelum penulisan class
+
+abstract Departement {
+
+};
+
+abstract tidak bisa di buat instance nya melainkan harus di extends.
+nah baru si child nya bisa diinstansiasi.

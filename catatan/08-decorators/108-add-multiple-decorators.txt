@@ -1,0 +1,14 @@
+kita bisa pakai 2 decorator
+
+cara jalannya kayak gini misal ada decorator A dan B
+
+@A
+@B 
+
+maka urutannya adalah 
+pemanggilan fungsi dari atas ke bawah yaitu A ke B 
+tapi ketika mulai akan menjalan decorator aslinya yaitu 
+saat berurusan dengan function yang memiliki constructor di dalam 
+decorator maka itu berjalan bottom up dari bawah ke atas ...
+kerjain dulu decorator constructor yang B, baru
+kerjain decorator constructor yang A. 

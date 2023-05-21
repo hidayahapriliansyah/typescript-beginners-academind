@@ -1,0 +1,28 @@
+akan ada masalah kalau kita buat kasus seperti ini :
+    function createCourseGoal(): CourseGoal {
+      let courseGoal: CourseGoal = {};
+      courseGoal.title = 'test';
+      courseGoal.description = 'desrsersd';
+      courseGoal.date = new Date();
+      return courseGoal;
+    }
+
+dengan menggunakan Partial<CourseGoal> kita bisa bikin
+kalau property interface CourseGoal bisa dimasukkan satu satu
+tidak wajib semuanya sehingga typescript akan memperbolehkan
+assignment courseGoal dengan objek kosong meskipun typenya
+adalah interface CourseGoal yang memiliki property wajib tertentu.
+
+    function createCourseGoal(): CourseGoal {
+      let courseGoal: Partial<CourseGoal> = {};
+      courseGoal.title = 'test';
+      courseGoal.description = 'desrsersd';
+      courseGoal.date = new Date();
+      return courseGoal as CourseGoal;
+    }
+
+Readonly
+
+pasti tahulah ini buat apa, ini mirip kayak ngejadiin const yang sesungguhnya ...
+    const names: Readonly<string[]> = ['Satu', 'dua'];
+    names.push('sdfsdf');
