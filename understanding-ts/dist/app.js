@@ -123,12 +123,35 @@ __decorate([
 const p = new Printer();
 const btn = document.querySelector('button');
 btn.addEventListener('click', p.showMessage);
-function Required() {
+const registerdValidators = {};
+function Required(target, propName) {
+    registerdValidators[target.constructor.name] = Object.assign(Object.assign({}, registerdValidators[target.constructor.name]), { [propName]: ['required'] });
 }
 ;
-function PositiveNumber() { }
+function PositiveNumber(target, propName) {
+    registerdValidators[target.constructor.name] = Object.assign(Object.assign({}, registerdValidators[target.constructor.name]), { [propName]: ['positive'] });
+}
 ;
-function validate(obj) { }
+function validate(obj) {
+    const objValidatorConfig = registerdValidators[obj.constructor.name];
+    if (!objValidatorConfig) {
+        return true;
+    }
+    let isValid = true;
+    for (const prop in objValidatorConfig) {
+        for (const validator of objValidatorConfig[prop]) {
+            switch (validator) {
+                case 'required':
+                    isValid = isValid && !!obj[prop];
+                    break;
+                case 'positive':
+                    isValid = isValid && obj[prop] > 0;
+                    break;
+            }
+        }
+    }
+    return isValid;
+}
 class Course {
     constructor(title, price) {
         this.title = title;
@@ -149,5 +172,9 @@ courseForm.addEventListener('submit', (e) => {
     const title = titleEl.value;
     const price = +priceEl.value;
     const createdCourse = new Course(title, price);
+    if (!validate(createdCourse)) {
+        alert('Invalid input, please try again!');
+        return;
+    }
     console.log(createdCourse);
 });
