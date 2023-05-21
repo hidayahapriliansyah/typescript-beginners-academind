@@ -11,7 +11,6 @@ function Autobind(_, _2, descriptor) {
     console.log(originalMethod);
     const adjDescriptor = {
         configurable: true,
-        enumerable: true,
         get() {
             const boundFn = originalMethod.bind(this);
             return boundFn;
@@ -33,9 +32,31 @@ class ProjectInput {
         this.configure();
         this.attach();
     }
+    gatherInput() {
+        const enteredTitle = this.titleInputElement.value;
+        const enteredDescription = this.descriptionInputElement.value;
+        const enteredPeople = this.peopleInputElement.value;
+        if (enteredTitle.trim().length === 0 || enteredDescription.trim().length === 0 || enteredPeople.trim().length === 0) {
+            alert('Invalid input, please try again!');
+            return;
+        }
+        else {
+            return [enteredTitle, enteredDescription, +enteredPeople];
+        }
+    }
+    clearInput() {
+        this.titleInputElement.value = '';
+        this.descriptionInputElement.value = '';
+        this.peopleInputElement.value = '';
+    }
     submitHandler(event) {
         event.preventDefault();
-        console.log(this.titleInputElement.value);
+        const userInput = this.gatherInput();
+        if (Array.isArray(userInput)) {
+            const [title, description, people] = userInput;
+            console.log(title, description, people);
+        }
+        this.clearInput();
     }
     configure() {
         this.element.addEventListener('submit', this.submitHandler);
@@ -46,5 +67,5 @@ class ProjectInput {
 }
 __decorate([
     Autobind
-], ProjectInput.prototype, "configure", null);
+], ProjectInput.prototype, "submitHandler", null);
 const prjInput = new ProjectInput();

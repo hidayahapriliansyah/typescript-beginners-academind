@@ -1,0 +1,56 @@
+ini mah udah di latihan sebelumnya dikerjain xixixi.
+
+BTW autobind na kudu di pasang na luhureun 
+    private submitHandler(event: Event)
+
+apa bedanya? hmmmm padahal dijalankeun dina
+    private configure() {} ge jalan. hmmmm ...
+
+hmmmm ... kenapa ya?
+
+harus tanyain chatGPT ini mah.
+
+tah kieu ceunah WKWKWKWK ...
+
+Error "this.gatherInput is not a function" terjadi karena konteks (this) dalam method submitHandler menjadi berubah setelah penggunaan decorator @Autobind pada method configure. Ketika method submitHandler dipanggil sebagai event handler, konteks (this) yang seharusnya merujuk pada instance ProjectInput berubah menjadi konteks event. Akibatnya, method gatherInput yang seharusnya ada di instance ProjectInput tidak dapat diakses melalui this.
+
+Untuk memperbaikinya, Anda dapat memastikan bahwa konteks (this) tetap merujuk pada instance ProjectInput saat submitHandler dipanggil. Ada beberapa cara untuk melakukannya:
+
+Memindahkan decorator @Autobind ke method submitHandler, sehingga method tersebut juga diikat ke konteks instance ProjectInput:
+javascript
+Copy code
+private configure() {
+  this.element.addEventListener('submit', this.submitHandler.bind(this));
+}
+
+@Autobind
+private submitHandler(event: Event) {
+  // ...
+}
+Menggunakan arrow function untuk mengikat konteks this secara otomatis:
+javascript
+Copy code
+private configure() {
+  this.element.addEventListener('submit', (event) => this.submitHandler(event));
+}
+
+@Autobind
+private submitHandler(event: Event) {
+  // ...
+}
+Menggunakan decorator @Autobind pada kedua method configure dan submitHandler:
+javascript
+Copy code
+@Autobind
+private configure() {
+  this.element.addEventListener('submit', this.submitHandler);
+}
+
+@Autobind
+private submitHandler(event: Event) {
+  // ...
+}
+Perbedaan dalam penggunaan kedua decorator ini terletak pada target dan pengikatan konteksnya:
+
+Jika decorator @Autobind hanya diterapkan pada method configure, maka hanya method configure yang akan diikat ke konteks instance ProjectInput. Method submitHandler tetap menggunakan konteks event.
+Jika decorator @Autobind diterapkan pada kedua method configure dan submitHandler, keduanya akan diikat ke konteks instance ProjectInput.
