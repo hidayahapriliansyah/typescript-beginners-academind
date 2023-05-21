@@ -1,0 +1,28 @@
+coba pahami sendiri lah ...
+initinya kalau kita pakai decorator untuk class
+maka si constructor nya itu merupakan class itu sendiri
+soalnya bisa di new, terus pas diconsole.log juga isinya class 
+itu sendiri.
+
+function WithTemplate(template: string, hookId: string) {
+  return function(constructor: any) {
+    const hookEl = document.getElementById('app')!;
+    const p = new constructor();
+    if (hookEl) {
+      hookEl.innerHTML = template;
+      hookEl.querySelector('h1')!.textContent = p.name;
+    }
+  }
+};
+
+// @Logger('LOGGING PERSON')
+@WithTemplate('<h1>My person Object</h1>', 'app')
+class Person {
+  name = 'Adi';
+
+  constructor() {
+    console.log('Heloo');
+  }
+}
+
+const person = new Person();

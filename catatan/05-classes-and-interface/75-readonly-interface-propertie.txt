@@ -1,0 +1,12 @@
+kita bisa nambahin readonly property buat nambahin
+sifat ke property interface nya.
+
+mirip kayak di class yang nambahin private, public,
+tapi interface mah gak bisa nambahin private atau public,
+kalau readonly bisa.
+
+interface Greetable {
+  readonly name: string;
+
+  greet(phrase: string): void;
+}

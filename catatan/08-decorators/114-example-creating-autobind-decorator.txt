@@ -1,0 +1,26 @@
+class Printer {
+  message = 'This is works!';
+
+  // @Autobind
+  showMessage() {
+    console.log(this.message);
+  }
+}
+
+const p = new Printer();
+const btn = document.querySelector('button')!;
+btn.addEventListener('click', p.showMessage);
+
+p.showMessage seperti yang kita tahu dia melakukan console.log this.message,
+tapi yang terjadi adalah ketika menggunakan addEventListener konteks dari
+this pada showMessage mengarah ke function addEventListener bukan ke object 
+itu sendiri.
+
+oleh karena kita akan harus melakukan bind
+
+    btn.addEventListener('click', p.showMessage.bind(p));
+
+agar si p.showMessage message paham bahwa konteks yang dimaksud dengan this adalah
+dari objek p itu sendiri.
+
+nah kita bakal biki decorator autobind nya.

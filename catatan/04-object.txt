@@ -1,0 +1,15 @@
+//  buat deklarasi type nya bisa kayak gini
+// const person: {
+//   name: string;
+//   age: number;
+// } = {
+//   name: 'Hidayah',
+//   age: 22,
+// };
+
+
+var person = {
+    name: 'Hidayah',
+    age: 22,
+};
+console.log(person.name);

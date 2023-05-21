@@ -1,0 +1,7 @@
+Ini ngebikiin apakah si properti wajib ada atau enggak.
+pake tanda tanya.
+
+interface Named {
+  readonly name?: string;
+  outputName?: string;
+}

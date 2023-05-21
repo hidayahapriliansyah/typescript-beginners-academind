@@ -1,0 +1,16 @@
+ini kayak bikin type pakai type
+// type AddFn = (n1: number, n2: number) => number; 
+
+nah pengecualian, perilaku interface itu bisa dijadiin
+type function kayak gini caranya:
+
+  interface AddFn {
+    (n1: number, n2: number): number;
+  }
+
+  let add: AddFn;
+  add = (n1: number, n2: number) => {
+    return n1 + n2;
+  }
+
+jadi nanti kalau bikin function ada alternatif pemberian type nya
