@@ -1,5 +1,5 @@
 function Autobind() {
-
+  
 }
 
 class ProjectInput {
