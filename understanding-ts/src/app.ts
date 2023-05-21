@@ -99,19 +99,18 @@ class ProjectList {
 
     projectState.addListener((projects: any[]) => {
       this.assignedProjects = projects;
+      this.renderProjects();
     });
 
-    this.renderProjects();
     this.attach();
     this.renderContent();
   }
 
   private renderProjects() {
     const listEl = document.getElementById(`${this.type}-projects-list`)! as HTMLUListElement;
-    for (const prjElement of this.assignedProjects) {
+    for (const prjItem of this.assignedProjects) {
       const liItem = document.createElement('li');
-      console.log('prjElement.title');
-      console.log(prjElement.title);
+      liItem.textContent = prjItem.title;
       listEl.appendChild(liItem);
     }
   }
