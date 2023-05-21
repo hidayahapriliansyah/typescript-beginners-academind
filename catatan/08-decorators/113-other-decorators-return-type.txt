@@ -1,0 +1,3 @@
+decorator yang bisa return selain decorator class adalah
+decorator Accessor dan decorator Method.
+
