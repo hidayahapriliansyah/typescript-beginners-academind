@@ -122,3 +122,39 @@ class Printer {
 const p = new Printer();
 const btn = document.querySelector('button')!;
 btn.addEventListener('click', p.showMessage);
+
+//  validation with Decorators
+function Required() {
+
+};
+
+function PositiveNumber() {};
+
+function validate(obj: object) {}
+
+
+class Course {
+  @Required
+  title: string;
+  @PositiveNumber
+  price: number;
+
+  constructor(title: string, price: number) {
+    this.title = title;
+    this.price = price;
+  }
+}
+
+const courseForm = document.querySelector('form')!;
+courseForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const titleEl = document.getElementById('title')! as HTMLInputElement;
+  const priceEl = document.getElementById('price')! as HTMLInputElement;
+
+  const title = titleEl.value;
+  const price = +priceEl.value;
+
+  const createdCourse = new Course(title, price);
+  console.log(createdCourse);
+});
