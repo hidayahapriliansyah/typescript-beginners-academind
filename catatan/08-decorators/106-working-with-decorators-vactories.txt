@@ -1,0 +1,15 @@
+heheh belajar sama chatGPT seru asli ... copas deh ...
+
+ Dalam konteks bahasa pemrograman yang mendukung decorator, seperti TypeScript atau Python, ada tiga jenis decorator yang umum digunakan:
+
+    1. Decorator Kelas: Decorator kelas diterapkan pada deklarasi kelas dan menerima argumen konstruktor kelas. Ini memungkinkan Anda untuk memodifikasi perilaku atau metadata kelas secara keseluruhan. Decorator kelas sering digunakan untuk menerapkan mixins, mengatur aspek keamanan, atau mengatur metadata tambahan pada kelas.
+
+    2. Decorator Metode: Decorator metode diterapkan pada deklarasi metode dalam kelas dan menerima argumen prototipe objek target, nama metode, dan descriptor metode. Ini memungkinkan Anda untuk memodifikasi perilaku atau metadata dari metode tersebut. Decorator metode sering digunakan untuk logging, validasi parameter, atau mengatur aspek keamanan pada metode.
+
+    3. Decorator Properti: Decorator properti diterapkan pada deklarasi properti dalam kelas dan menerima argumen prototipe objek target dan nama properti. Ini memungkinkan Anda untuk memodifikasi perilaku atau metadata dari properti tersebut. Decorator properti sering digunakan untuk validasi nilai properti, mengatur aspek keamanan, atau mengatur metadata tambahan pada properti.
+
+  Dengan menggunakan kombinasi ketiga jenis decorator ini, Anda dapat mengubah dan menambahkan perilaku pada kelas, metode, atau properti dengan cara yang fleksibel dan modular.
+
+intinya decorator itu FUNGSI.
+decora factory itu decorator yang nge return function. 
+ARHARJHJARH

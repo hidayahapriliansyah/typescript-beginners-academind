@@ -1,0 +1,16 @@
+//  never type
+function generateError(message: string, code: number): never {
+  throw { message: message, code: code };
+};
+
+console.log(generateError('An error occured', 500));
+
+never itu mirip void. Yang beda itu void itu jelas dia gak nge return apapun
+karena dalam functionna tidak ada statement return
+hanya saja ketika function void dijalankan, function tersebut masih
+menghasilkan nilai undefined. Nah si never ini bener bener gak ngembaliin apapun
+pas dijalanin, pas diconsole.log.
+
+pada function generateError dapat dilihat bahwa isinya itu throw doang,
+yang mana kalau throw tidak akan menjalankan kode di bawahnya dan harapannya
+hasil dari throw di terima pada error catch di try catch.

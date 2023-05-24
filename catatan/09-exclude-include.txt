@@ -1,0 +1,27 @@
+pada tsconfig.json kita bisa menambahkan properties
+
+  "exclude": [
+    "functions.ts"
+  ],
+  "include": [
+    "app.ts",
+  ],
+
+kalau exlude semua akan compile kecuali yang ada di exclude, 
+kalau include semua tidak compile kecuali yang ada di include, 
+
+kita juga bisa pakai cara penulisan kayak :
+  "exclude": [
+    "*.dev.ts"
+  ],
+  buat nandain semua file yang ujungnya .dev.ts
+
+  atau 
+  "exclude": [
+    "*.dev.ts"
+  ],
+  buat nandain di folder apapun file apapun yang ujungnya .dev.ts
+
+
+secara default, tanpa  menulis exclude, tsconfig secara otomatis
+meng exclude node_modules

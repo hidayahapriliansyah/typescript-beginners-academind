@@ -1,0 +1,10 @@
+ini kayak buat ngenalin si ts mengenai global variable atau objek.
+misalkan document, window. ts itu aslinya gak bisa ujug ujug.
+tapi default nya meskipun tidak disetting adalah : 
+      "lib": [
+      "DOM",
+      "ES6",
+      "DOM.Iterable",
+      "ScriptHost",
+    ],
+

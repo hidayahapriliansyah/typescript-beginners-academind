@@ -1,0 +1,24 @@
+Kenapa harus dicek type casting nya?
+
+misalnya kita mau ngeset value dari variable yang kita buat dari mentarget element di html.
+nah seperti yang kita tahu bahwa variable di type script harus memiliki tipe.
+nah jika tipe ini merupakan tipe HTMLElement maka itu merupakan type common
+yang mana misal jika input tidak semua type memiliki Property value kan? masa p punya value?
+oleh karena itu sebutin kira kira type data dari element yang kita target apa
+
+    const userInput = document.getElementById('user-input')! as HTMLInputElement;
+
+    atau 
+
+    const userInput = <HTMLInputElement>document.getElementById('user-input')!;
+
+    userInput.value = 'Hello Adi';
+
+kecuali kalau nargetnya pakai querySelector('p') si typescript bakal tau kalau itu jelas paragraf,
+tapi kalau narget pakai id, class, si typescript gak tahu itu tipe element apa.
+
+kenapa pakai tanda seru ? itu nunjukin bahwa ketika kita narget element, element tersebut
+dipastikan tidak akan menghasilkan null.
+
+
+
