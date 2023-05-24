@@ -44,6 +44,18 @@ class ProjectState extends State {
     addProject(title, description, numOfPeople) {
         const newProject = new Project(Math.random().toString(), title, description, numOfPeople, ProjectStatus.Active);
         this.projects.push(newProject);
+        this.updateListener();
+    }
+    moveProject(prjId, newStatus) {
+        const project = this.projects.find((prj) => prj.id === prjId);
+        if (project && project.status !== newStatus) {
+            console.log('project.status');
+            console.log(project.status);
+            project.status = newStatus;
+            this.updateListener();
+        }
+    }
+    updateListener() {
         for (const listenerFn of this.listeners) {
             listenerFn(this.projects.slice());
         }
@@ -151,7 +163,8 @@ class ProjectList extends Component {
         listEl.classList.remove('droppable');
     }
     dropHandler(event) {
-        console.log(event.dataTransfer.getData('text/plain'));
+        const prjId = event.dataTransfer.getData('text/plain');
+        projectState.moveProject(prjId, this.type === 'active' ? ProjectStatus.Active : ProjectStatus.Finished);
     }
     configure() {
         this.element.addEventListener('dragover', this.dragOverHandler);
@@ -188,6 +201,9 @@ __decorate([
 __decorate([
     Autobind
 ], ProjectList.prototype, "dragLeaveHandler", null);
+__decorate([
+    Autobind
+], ProjectList.prototype, "dropHandler", null);
 class ProjectInput extends Component {
     constructor() {
         super('project-input', 'app', true, 'user-input');
