@@ -30,7 +30,7 @@ export class ProjectList
   }
 
   @Autobind
-  dragLeaveHandler(even: DragEvent): void {
+  dragLeaveHandler(_: DragEvent): void {
     const listEl = this.element.querySelector('ul')!;
     listEl.classList.remove('droppable');
   }

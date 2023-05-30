@@ -24,7 +24,7 @@ export class ProjectItem
     event.dataTransfer!.effectAllowed = 'move';
   }
 
-  dragEndHandler(event: DragEvent): void {
+  dragEndHandler(_: DragEvent): void {
     console.log('end drag');
   }
 
