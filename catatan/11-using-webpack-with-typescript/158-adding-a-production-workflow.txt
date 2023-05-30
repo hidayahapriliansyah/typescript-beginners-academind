@@ -1,0 +1,32 @@
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+module.exports = {
+  mode: 'production',
+  entry: './src/app.ts',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+  ],
+};
+
+terus ditambahin script runner gini:
+    "build": "webpack --config webpack.config.prod.js"
+
+agak mudah karena sebelumnya udah pernah belajar di dicoding tentang webpack 
+jadi tinggal ngikut aja heheheheheheh
