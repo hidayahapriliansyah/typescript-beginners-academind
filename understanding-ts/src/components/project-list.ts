@@ -1,3 +1,9 @@
+/// <reference path="base-component.ts" />
+/// <reference path="../decorators/autobind-decorator.ts" />
+/// <reference path="../state/project-state.ts" />
+/// <reference path="../models/project-model.ts" />
+/// <reference path="../models/drag-and-drop-interfaces.ts" />
+
 namespace App {
   // ProjectList Class
   export class ProjectList
