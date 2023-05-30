@@ -1,0 +1,4 @@
+initinya dibikin lebih modular file dan foldernya lebih terstruktur
+
+pakai teknik namespaces dan export class
+lalu panggil reference nya ...
