@@ -1,0 +1,13 @@
+ooohhhh
+
+jadi ieu siga mun pake script js dina html ...
+kudu make script hiji hiji nyusun
+
+padahal perscript butuh dependensi script lain.
+jadi kuduna mah bikin script siga nu jadi type module tea,
+jadi perscript nyambungkeun heula kana script na masing masing
+
+nahhh dina ts ge penggunaan namespaces kudu sesuai kebutuhan, 
+script ieu butuheun namespaces lain kirimkeun ... pake reference nnaa...
+
+ih apaan sih.

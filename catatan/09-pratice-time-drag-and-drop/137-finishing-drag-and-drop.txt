@@ -1,0 +1,19 @@
+  
+ini di class ProjectState 
+
+  moveProject(prjId: string, newStatus: ProjectStatus) {
+    const project = this.projects.find((prj) => prj.id === prjId);
+    if (project && project.status !== newStatus) {
+      console.log('project.status');
+      console.log(project.status);
+      project.status = newStatus;
+      this.updateListener();
+    }
+  }
+
+hasil trigger dari sini, class ProjectList :
+  @Autobind
+  dropHandler(event: DragEvent): void {
+    const prjId = event.dataTransfer!.getData('text/plain');
+    projectState.moveProject(prjId, this.type === 'active' ? ProjectStatus.Active : ProjectStatus.Finished);
+  }

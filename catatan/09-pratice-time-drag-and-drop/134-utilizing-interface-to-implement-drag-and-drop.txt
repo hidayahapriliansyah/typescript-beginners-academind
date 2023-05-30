@@ -1,0 +1,6 @@
+ternyata gini cara bikin drag and drop coyyy
+
+  configure(): void {
+    this.element.addEventListener('dragstart', this.dragStartHandler);
+    this.element.addEventListener('dragend', this.dragEndHandler);
+  }

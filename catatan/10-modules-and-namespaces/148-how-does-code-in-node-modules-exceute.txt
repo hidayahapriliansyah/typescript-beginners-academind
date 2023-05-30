@@ -1,0 +1,10 @@
+sugan teh ngabahas naon ...
+
+jadi ngabahas lamun misal kode di export, terus kan di panggil sababarakali
+dina file ieu, itu, eta maka kode nu di export na dijalankeun sabaraha kali?
+
+sakali xixixi 
+
+kalau konsep saya mah sigana jadi kalau udah ada import export mah seolah olah 
+ngegabung si file teh jeung nu di export. eh tapi jalan sakali nya? teuing ah.
+atau meureun seolah olah semua file aplikasi jadi sa gojod kitu intina mah.

@@ -1,0 +1,5 @@
+  constructor(private readonly name: string) {
+    // readonly tambahan supaya si properti cuma bisa diasign sekali
+    // terus gak bisa diubah ubah dengan this.name = balbalbal
+    // this.name = name;
+  }
