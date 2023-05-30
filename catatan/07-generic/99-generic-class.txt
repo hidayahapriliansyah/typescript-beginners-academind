@@ -1,0 +1,67 @@
+ini mirip union types tapi versi generics
+
+dari contoh yang disebutkan adalah ketika membuat instance dari
+class kita bisa menggunakan method dan properti pada objek tersebut
+dengan tipe apa pun. nah, pada javascript terkadang terdapat behaviour
+aneh salah satu contohnya ketika bekerja dengan tipe data objek.
+
+    class DataStorage<T> {
+      private data: T[] = [];
+
+      addItem(item: T) {
+        this.data.push(item);
+      }
+
+      removeItem(item: T) {
+        this.data.splice(this.data.indexOf(item), 1);
+      };
+
+      getItems() {
+        return [...this.data];
+      };
+    }
+
+    const objStorage = new DataStorage<object>();
+    objStorage.addItem({ name: 'Hidayah' });
+    objStorage.addItem({ name: 'Apriliansyah' });
+    // nah pas pake removeItem yang ini, meskipun objeknya sama tapi si js nganggep ini obj yang
+    // beda dan punya alamat yang beda di memori
+    objStorage.removeItem({ name: 'Hidayah' });
+    console.log(objStorage);
+
+dari kode di atas kita mengharapkan hasil output 
+    [{ name: 'Apriliansyah' }]
+
+karena kita telah menghapus Hidayah dengan splice dan indexOf
+nah, kalau tipe data primitif kayak string, boolean, number mah 
+normal aja harusnya si apriliansyah yang kehapus, tapi kenapa ini 
+kalau pakai objek jadi kayak gini?
+
+pada saat 
+    objStorage.removeItem({ name: 'Hidayah' });
+
+mungkin kita nganggep udah bener kita mau hapus item Hidayah
+dari objStorage yang mana udah sama ada item Hidayah yang dimasukkin,
+nah padahal si js nganggepnya gini : si item hidayah yang dimasukkin
+ke removeItem itu beda dengan item Hidayah di objStorage yang udah dibikin.
+sehingga ketika ngejalan removeItem bakal return -1 yang artinya itemnya gak ketemu.
+nah kalau item gak ketemu, karena itu pake splice ya, maka otomatis js bakal
+ngehapus 1 item dari ujung array paling kanan yang Apriliansyah. (itu behaviour splice);
+
+buat mencegah penghapusan itu kita bisa bikin kayak gini :
+      removeItem(item: T) {
+        if (this.data.indexOf(item) === -1) {
+          return;
+        }
+        this.data.splice(this.data.indexOf(item), 1);
+      };
+
+tapi itu artinya kalau kita ngehapus terus ternyata yang dihapus dianggap gak ada.
+si objnya tetep utuh dong? Nah di sini lah generic mengambil peran. karena kita
+tahu kalau ada behaviour aneh jika kita menggunakan tipe data obj (non-primitif),
+di class yang dibuat kita extends aja di generic type nya dengan tipe data yang berjalan normal.
+
+    class DataStorage<T extends string | boolean | number > {}
+
+sehingga ketika kita mau bikin instance dari class tersbut yang menggunakan object
+maka itu typescript akan menganggapnya tidak valid.

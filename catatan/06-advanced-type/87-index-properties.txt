@@ -1,0 +1,13 @@
+index properti ini mecahin masalah kalau
+  kita harus ngasih nama apa propertinya, dan
+  kita gak tahu berapa banyak properti yang bakal kita buat,
+
+contoh cara bikinya :
+  interface ErrorContainer {
+    [props: string]: string;
+  }
+
+  const ErrorBag: ErrorContainer = {
+    email: 'Hello',
+  };
+

@@ -1,0 +1,32 @@
+ieu lumayan lieur awwwww :)
+
+intina kita bisa return class baru mengganti class 
+saat suatu class di instansiasi. kitu.
+
+function WithTemplate(template: string, hookId: string) {
+  console.log('TEMPLATE DECORATOR');
+  return function<T extends { new (...args: any[]): {name: string} }>(originalConstructor: T) {
+    return class extends originalConstructor{
+      constructor(..._: any[]) {
+        super();
+        const hookEl = document.getElementById(hookId)!;
+        if (hookEl) {
+          hookEl.innerHTML = template;
+          hookEl.querySelector('h1')!.textContent = this.name;
+        }
+      }
+    }
+  }
+};
+
+@Logger('LOGGING PERSON')
+@WithTemplate('<h1>My person Object</h1>', 'app')
+class Person {
+  name = 'Adi';
+
+  constructor() {
+    console.log('Heloo');
+  }
+}
+
+const person = new Person();
