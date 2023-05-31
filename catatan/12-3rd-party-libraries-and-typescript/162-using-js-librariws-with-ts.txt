@@ -1,0 +1,4 @@
+intinya ... kalau kita pakai libraries yang isinya file js semua
+kita bisa pake butuh versi typescript nya 
+kayak lodash. lodash kan semua kodenya js tuh, 
+supaya si ts bisa tahu, maka install @types/lodash
