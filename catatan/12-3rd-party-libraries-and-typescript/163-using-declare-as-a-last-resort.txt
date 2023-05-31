@@ -1,0 +1,13 @@
+ini biasanya digunakan di librari gituuu ...
+
+declare itu kayak ngemastiin ke ts bahwa tenangg
+variable ini nanti bakal ada kok.
+
+contoh :
+
+  declare var GLOBAL: string;
+
+  console.log(GLOBAL);
+
+nah padahal si GLOBAL udah di declare di tag script html. 
+nanti bakal tahu si js nya, tapi belum sekarang.
