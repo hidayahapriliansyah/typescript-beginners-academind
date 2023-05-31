@@ -1,0 +1,14 @@
+kita bisa pake interface lain dalam interface lain. paan sih?
+kayak extends di class tapi bisa lebih dari satu interface
+
+interface Named {
+  readonly name: string;
+}
+
+interface FormalGreet {
+  greetingPhrase: string;
+}
+
+interface Greetable extends Named, FormalGreet {
+  greet(phrase: string): void;
+}

@@ -1,0 +1,12 @@
+ini jadi kayak pakai js biasa, keren euy.
+ini juga katanya merupakan rekomendasi buat import sama export file 
+biar kodenya modular mudah dimenej dan dipelihara.
+
+intinya setiap variable diexport kayak pakai js biasa aja,
+termasuk interface yang gak disuppport sama js nya di export 
+nanti pas penggunaannya di import juga.
+
+nah buat ngaktifin fitur ini, dits confignya harus diatur dulu:
+1. pastiin pakai module ini yang support es6 yaitu :   "module": "ES2015", 
+2. pastiin juga targetnya es6,
+3. lalu jangan aktifin     // "outFile": "./dist/bundle.js",

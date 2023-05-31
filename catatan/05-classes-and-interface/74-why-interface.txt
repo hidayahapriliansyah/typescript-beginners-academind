@@ -1,0 +1,26 @@
+kenapa ya?
+
+katanya course nya sih intinya
+kalau pakai kita interface kita gak peduli gak perlu
+tahu detail isi dari interface nya harus kayak gimana seperti dalam class.
+
+gak perlu instansiasi. yang penting objek yang dibikin isinya
+udah sesuai aja sama ketentuan interface nya.
+
+kalau kata chat GPT mah gini :
+
+Ada beberapa alasan mengapa di dalam TypeScript, interface sering kali lebih disukai daripada class, terutama ketika digunakan untuk mendefinisikan struktur data.
+
+Fokus pada struktur data
+Interface digunakan untuk mendefinisikan tipe data, seperti objek atau fungsi. Dalam TypeScript, interface memberikan fokus pada struktur data tanpa harus melibatkan implementasi atau perilaku. Ini sangat membantu dalam memahami kode dan memudahkan debugging.
+
+Fleksibilitas
+Interface dapat digunakan pada berbagai jenis tipe data, termasuk objek, fungsi, array, dan lainnya. Hal ini memberikan fleksibilitas yang lebih besar dibandingkan dengan class, yang hanya dapat digunakan untuk objek.
+
+Polimorfisme
+Interface dapat digunakan dalam polimorfisme, yang berarti bahwa satu interface dapat diimplementasikan oleh banyak kelas. Ini memungkinkan fleksibilitas dalam mengatur hierarki kelas dan memudahkan dalam membuat kode yang modular dan reusable.
+
+Performa yang lebih baik
+Interface lebih ringan dan lebih cepat daripada class dalam penggunaannya. Hal ini karena interface tidak memerlukan runtime overhead seperti class.
+
+Namun, class masih memiliki kegunaannya terutama ketika digunakan untuk mengimplementasikan behavior atau perilaku dari suatu objek. Karena itu, keduanya masih memiliki tempatnya masing-masing dalam pengembangan aplikasi TypeScript.

@@ -1,0 +1,4 @@
+pastikan kalau pakai webpack settingan tsconfig nya 
+target ES6 
+terus module nya es2015 
+terus matitin // "rootDir": "./src", karena nanti di webpack juga bakal setting entry 

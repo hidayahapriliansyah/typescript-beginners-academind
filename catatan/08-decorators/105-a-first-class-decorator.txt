@@ -1,0 +1,45 @@
+LIEUR LIEUR LIEURRR ....
+
+
+intinya 
+
+cara nulis logger pasang di class,
+buat function logger nya ...
+terus sii logger itu butuh parameter. BUTUH AH LIEur.
+
+contoh : 
+
+    function Logger(hahaha: Function) {
+      console.log('Logging ...');
+      console.log(hahaha);
+    };
+
+    @Logger
+    class Person {
+      name = 'Hidayah';
+      
+      constructor() {
+        console.log('Creating person object ...');
+      };
+    }
+
+    const person = new Person();
+
+    console.log(person);
+
+Kalau kata chatGPT mah gini ceunah :
+    Decorator adalah fungsi khusus yang digunakan untuk memodifikasi deklarasi kelas, metode, atau properti. Decorator diterapkan menggunakan sintaksis @ sebelum target yang akan dimodifikasi. Decorator dapat mengubah perilaku atau metadata dari target yang didekorasi.
+
+    bisa dipanggil di method deuih ceunah ...
+    function logMethod(target: any, key: string, descriptor: PropertyDescriptor) {
+      // Modifikasi perilaku metode di sini
+      console.log(`Metode ${key} telah didekorasi`);
+    }
+
+    class Example {
+      @logMethod
+      greet() {
+        console.log('Halo!');
+      }
+    }
+

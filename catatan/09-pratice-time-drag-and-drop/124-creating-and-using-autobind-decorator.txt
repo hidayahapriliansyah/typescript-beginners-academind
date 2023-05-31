@@ -1,0 +1,7 @@
+ini mah udah di latihan sebelumnya dikerjain xixixi.
+
+BTW autobind na kudu di pasang na luhureun 
+    private submitHandler(event: Event)
+
+apa bedanya? hmmmm padahal dijalankeun dina
+    private configure() {} ge jalan. hmmmm ...

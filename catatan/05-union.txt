@@ -1,0 +1,20 @@
+const combine = (input1: number | string, input2: number | string) => {
+  let result: number | string;
+
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+
+  return result;
+};
+
+const combineAge = combine(20, 10);
+console.log(combineAge);
+
+const combineName = combine('Hello', 'Adi');
+console.log(combineName);
+
+
+union teh atau atuh. type datana number atau string = number | string.
