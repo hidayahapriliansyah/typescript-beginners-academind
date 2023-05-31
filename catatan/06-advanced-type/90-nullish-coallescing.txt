@@ -1,0 +1,8 @@
+ini mah geus kaharti lah pastiiiii
+
+const userInput = '';
+//  '' dianggap false kalau pakai ||
+
+const name = userInput ?? 'DEFAULT';
+
+console.log('name', name);

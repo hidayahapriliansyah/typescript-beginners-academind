@@ -1,0 +1,119 @@
+ini keren sih.
+
+ini berusaha mecahin masalah kalau make type data union type.
+yang mana data yang dicek harus bisa tetap berjalan flexible
+sesuai dengan macam macam tipe data union.
+
+nah, melindungi berdasarkan tipe data ini yang triki karena
+kita tidak bisa seenaknya menggunakan typeof pada type data buatan typescript.
+untuk melindungi type data maka harus menggunakan penulisan kode
+yang secara langsung dimengerti oleh javascript.
+
+dari course ini dikasih tiga contoh yaitu menggunakan :
+- typeof
+- in
+- instanceof
+
+typeof untuk mengecek type data secara langsung
+in untuk mengecek apakah terdapat suatu properti tertentu dalam sebuah objek
+instanceof untuk mengecek di objek yang dibuat diinstansiasi dari class apa
+
+jadi type guard itu bukan tentang syntax tertentu penulisan typescript ya,
+tapi tentang teknik bagaimana cara mengecek suatu type data agar kode 
+yang dibuat tetap berjalan meskipun menggunakan tipe data yang flexible
+
+contoh :
+  // type Admin = {
+//   name: string;
+//   privilege: string[];
+// }
+
+// type Employee = {
+//   name: string;
+//   startDate: Date;
+// }
+
+interface Admin {
+  name: string;
+  privilege: string[];
+}
+
+interface Employee {
+  name: string;
+  startDate: Date;
+}
+
+interface ElevatedEmployee extends Admin, Employee {
+
+}
+
+const employee: ElevatedEmployee = {
+  name: 'Hidayah',
+  privilege: ['madang'],
+  startDate: new Date(),
+};
+
+// contoh pakai typeof
+type Combinable = number | string;
+type Numeric = number;
+
+type Universal = Combinable & Numeric; 
+
+function add(a: Combinable, b: Combinable) {
+  if (typeof a === 'string' || typeof b === 'string') {
+    return a.toLocaleString() + b.toLocaleString();
+  }
+  return a + b;
+};
+
+// pakai in
+type UnknownEmployee = Admin | Employee;
+
+function printEmployeeInformation(emp: UnknownEmployee) {
+  if ('privileges' in emp) {
+    console.log('Privileges admin : ' + emp.privileges);
+  }
+  
+  if ('startDate' in emp) {
+    console.log('Startdate Employee : ' + emp.startDate);
+  }
+};
+
+const emp1: UnknownEmployee = {
+  name: 'Adi',
+  startDate: new Date(),
+  privilege: ['apa'],
+};
+
+printEmployeeInformation(emp1);
+
+// pakai instance of
+class Car {
+  drive() {
+    console.log('Drive ...');
+  }
+}
+
+class Truck {
+  drive() {
+    console.log('Drive ...');
+  };
+
+  loadCargo(amount: number) {
+    console.log('Loading cargo ...' + amount);
+  };
+}
+
+type Vehicle = Car | Truck;
+
+const v1 = new Car();
+const v2 = new Truck();
+
+function useVehicle(vehicle: Vehicle) {
+  if (vehicle instanceof Truck) {
+    vehicle.loadCargo(1000);
+  }
+  vehicle.drive();
+}
+
+useVehicle(v2);

@@ -1,0 +1,6 @@
+Generic type itu mengunci suatu type data untuk suatu class yang mana 
+method atau property nya pasti harus mengikuti type data class.
+
+Union type flexible untuk menentukan tipe data untuk setiap function 
+yang dipanggil secara berbeda/terpisah bukan merupakan method/bagian
+dari objek/class.

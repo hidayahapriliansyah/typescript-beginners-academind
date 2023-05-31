@@ -1,0 +1,7 @@
+npm install -D webpack webpack-cli webpack-dev-server ts-loader typescript
+
+it's a good practice to also install a copy ts per project so 
+yo got the specific typescript version 
+... oh jadi kalau tidak tidak pernah merubah ts kita yang global 
+seenggaknya kita gak ngancurin projek ts kita karena ya takut yang global kita
+versinya ketinggalan ...

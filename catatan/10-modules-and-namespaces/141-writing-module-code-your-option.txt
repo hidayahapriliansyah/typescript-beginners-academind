@@ -1,0 +1,3 @@
+ada dua pilihan yang bagus :
+pakai namespace
+pakai import export

@@ -1,0 +1,18 @@
+sigana paham ieu mah.
+soalna da geus rada biasa oge.
+takut gak ada yang dimaksud, daripada error, sina ulah error jadi undefined;
+contoh :
+
+const result = add(2, 'Hello');
+result.split(' ');
+
+const fetchData = {
+  id: 'u1',
+  name: 'Hidayaha',
+  job: {
+    title: 'Front End Programmer',
+    description: 'My own componay',
+  }
+};
+
+console.log(fetchData?.job?.title);

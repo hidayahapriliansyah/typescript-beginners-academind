@@ -1,0 +1,43 @@
+cara bikin namespace di file kumpulan namespace yang mau diexport nya ...
+
+contoh di drag-and-drop-interfaces.ts:
+    namespace App {
+      export interface Draggable {
+        dragStartHandler(event: DragEvent): void;
+        dragEndHandler(event: DragEvent): void;
+      }
+
+      export interface DragTarget {
+        dragOverHandler(even: DragEvent): void;
+        dropHandler(even: DragEvent): void;
+        dragLeaveHandler(even: DragEvent): void;
+      }
+    }
+
+cara pakai di app.ts
+pastiin semua syntax yang membutuhkan kode dari namespace App berada
+di dalam namespace App
+
+kita kurung semuanya pakai namespace App {}
+
+masuk masukin kode di app. ts ke namespace App tersebut.
+tapi sebelum itu kita kasih tahu reference namespacenya dari file mana .
+pasang di paling atas. cara nulisnya pakai slash tiga kali ///
+
+    /// <reference path="drag-and-drop-interfaces.ts" />
+    /// <reference path="project-model.ts" />
+
+nah kalau pakai 2 namespace bakal terjadi masalah ketika file sudah dicompile, yang mana
+file project-model.ts bakal jadi file tersendiri yang mana file tersebut mengexport 
+namespace yang tidak disupport oleh javascript. salah satu solusi mengatasi masalah 
+ini adalah dengan membundle hasil compiling menjadi satu buah file. cara nya gimana?
+  -konfigurasi tsconfig.json dulu 
+  aktifin
+      "outFile": "./dist/bundle.js", 
+
+  ini buat nentuin dimana dan apa nama file hasil bundle
+  lalu buat ngaktifin fitur outfile karena terjadi error yang katanya itu hanya disupport
+  sama umd kitu lah, maka ganti module jadi amd 
+
+      "module": "AMD", 
+
