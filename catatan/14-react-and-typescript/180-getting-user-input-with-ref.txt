@@ -15,7 +15,7 @@ contoh kode :
         e.preventDefault();
         const enteredText = textInputRef.current!.value;
         console.log('textInputRef after render');
-        console.log(textInputRef); // { current: input#todo-text }
+        console.log(textInputRef); // { current: input#todo-text } nilai current sekarang adalah element input yang dikasih ref tadi
         console.log(enteredText); // ini akan bernilai value dari input 
         // textInputRef.current!.focus();
         // bahkan kita pun bisa ngelakuin hal kayak nambahin fokus ke elemennya lewat ref ini.

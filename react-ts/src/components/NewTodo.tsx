@@ -12,6 +12,10 @@ const NewTodo: React.FC = () => {
     // textInputRef.current!.focus();
     console.log('textInputRef after render');
     console.log(textInputRef);
+    console.log('textInputRef.current');
+    console.log(textInputRef.current);
+    console.log(textInputRef.current!.id);
+    console.log(typeof textInputRef.current);
     console.log(enteredText);
   };
 
