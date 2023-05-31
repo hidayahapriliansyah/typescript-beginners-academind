@@ -25,3 +25,4 @@ berarti interface malah bisa dijadiin kayak struktur props na nya ... contoh:
     };
 
     export default TodoList;
+

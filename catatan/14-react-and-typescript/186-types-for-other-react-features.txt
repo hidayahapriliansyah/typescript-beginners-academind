@@ -1,0 +1,9 @@
+oh iyaa ...
+kalau misal mau pakai librari lain yang ternyata gak ada typesnya,
+installin aja dengan cara:
+  npm install -D @types/nama_library
+
+  contoh buat react router dom 
+  npm install -D @types/react-router-dom
+
+
